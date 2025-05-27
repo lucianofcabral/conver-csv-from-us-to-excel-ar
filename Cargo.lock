@@ -262,6 +262,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "csv-converter"
+version = "0.1.0"
+dependencies = [
+ "csv",
+ "rfd",
+]
+
+[[package]]
 name = "csv-core"
 version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -899,14 +907,6 @@ dependencies = [
  "wasm-bindgen-futures",
  "web-sys",
  "windows-sys",
-]
-
-[[package]]
-name = "rust"
-version = "0.1.0"
-dependencies = [
- "csv",
- "rfd",
 ]
 
 [[package]]
