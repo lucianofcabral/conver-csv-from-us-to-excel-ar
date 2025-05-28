@@ -11,13 +11,7 @@ fn convert_csv(input_file: &str, output_file: &str) -> Result<(), Box<dyn Error>
     let output = File::create(output_file)?;
     let mut writer = WriterBuilder::new().delimiter(b';').from_writer(output);
 
-    if let Some(headers) = reader
-        .headers()?
-        .iter()
-        .map(|h| h.replace('.', ","))
-        .collect::<Vec<String>>()
-        .into()
-    {
+    if let Some(headers) = reader.headers()?.iter().collect::<Vec<&str>>().into() {
         writer.write_record(&headers)?;
     }
 
